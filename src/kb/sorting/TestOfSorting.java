@@ -7,12 +7,12 @@ public class TestOfSorting {
 	
 	public static void main(String[]args){
 		Random r = new Random();
-		int[]testArray = new int[100];
+		int size = 100;
+		int[]testArray = new int[size];
 		for(int i = 0; i < testArray.length; i++){
-			testArray[i] = r.nextInt(110);
+			testArray[i] = r.nextInt(size + 10);
 		}
 		int[]testArray2 = Arrays.copyOf(testArray, testArray.length); // for object use DEEP COPY
-		int[]testArray3 = Arrays.copyOf(testArray, testArray.length);
 		
 		System.out.println("BUBBLE SORT");
 		TestOfSorting.printArray(testArray);
@@ -24,24 +24,15 @@ public class TestOfSorting {
 		TestOfSorting.printArray(testArray);
 		
 		System.out.println();
-		System.out.println("SELECT SORT");
+		
+		System.out.println("MERGE SORT");
 		TestOfSorting.printArray(testArray2);
-		long start2 = System.currentTimeMillis();
+		start = System.currentTimeMillis();
 		
-		SelectSort.sort(testArray2);
+		MergeSort.sort(testArray2);
 		
-		System.out.println(System.currentTimeMillis() - start2);
+		System.out.println(System.currentTimeMillis() - start);
 		TestOfSorting.printArray(testArray2);
-		
-		System.out.println();
-		System.out.println("INSERT SORT");
-		TestOfSorting.printArray(testArray3);
-		long start3 = System.currentTimeMillis();
-		
-		InsertionSort.sort(testArray3);
-		
-		System.out.println(System.currentTimeMillis() - start3);
-		TestOfSorting.printArray(testArray3);
 		
 	}
 	
