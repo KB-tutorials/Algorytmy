@@ -11,7 +11,7 @@ public class MergeSort {
 	
 	private static void mergeSort(int[]array, int leftIndex, int rightIndex){
 		if(leftIndex < rightIndex){
-			int middle = (leftIndex + rightIndex) / 2;
+			int middle = leftIndex / 2 + rightIndex / 2; // same as (leftIndex + rightIndex ) / 2 but safe for big arrays 
 			mergeSort(array, leftIndex, middle);
 			mergeSort(array, middle + 1, rightIndex);
 			merge(array, leftIndex, middle, rightIndex);
