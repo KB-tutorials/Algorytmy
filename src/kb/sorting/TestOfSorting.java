@@ -7,12 +7,13 @@ public class TestOfSorting {
 	
 	public static void main(String[]args){
 		Random r = new Random();
-		int size = 100;
+		int size = 1000;
 		int[]testArray = new int[size];
 		for(int i = 0; i < testArray.length; i++){
 			testArray[i] = r.nextInt(size + 10);
 		}
 		int[]testArray2 = Arrays.copyOf(testArray, testArray.length); // for object use DEEP COPY
+		int[]testArray3 = Arrays.copyOf(testArray, testArray.length);
 		
 		System.out.println("BUBBLE SORT");
 		TestOfSorting.printArray(testArray);
@@ -34,6 +35,14 @@ public class TestOfSorting {
 		System.out.println(System.currentTimeMillis() - start);
 		TestOfSorting.printArray(testArray2);
 		
+		System.out.println("HEAP SORT");
+		TestOfSorting.printArray(testArray3);
+		start = System.currentTimeMillis();
+		
+		HeapSort.sort(testArray3);
+		
+		System.out.println(System.currentTimeMillis() - start);
+		TestOfSorting.printArray(testArray3);
 	}
 	
 	private static void printArray(int[]arr){
