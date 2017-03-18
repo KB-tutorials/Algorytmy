@@ -7,7 +7,7 @@ public class TestOfSorting {
 	
 	public static void main(String[]args){
 		Random r = new Random();
-		int size = 1000;
+		int size = 10000;
 		int[]testArray = new int[size];
 		for(int i = 0; i < testArray.length; i++){
 			testArray[i] = r.nextInt(size + 10);
@@ -26,23 +26,15 @@ public class TestOfSorting {
 		
 		System.out.println();
 		
-		System.out.println("MERGE SORT");
+		System.out.println("QUICK SORT");
 		TestOfSorting.printArray(testArray2);
 		start = System.currentTimeMillis();
 		
-		MergeSort.sort(testArray2);
+		QuickSort.sort(testArray2);
 		
 		System.out.println(System.currentTimeMillis() - start);
 		TestOfSorting.printArray(testArray2);
-		
-		System.out.println("HEAP SORT");
-		TestOfSorting.printArray(testArray3);
-		start = System.currentTimeMillis();
-		
-		HeapSort.sort(testArray3);
-		
-		System.out.println(System.currentTimeMillis() - start);
-		TestOfSorting.printArray(testArray3);
+
 	}
 	
 	private static void printArray(int[]arr){

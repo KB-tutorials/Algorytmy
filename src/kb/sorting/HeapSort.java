@@ -3,6 +3,9 @@ package kb.sorting;
 public class HeapSort {
 	
 	public static void sort(int[]arrayToSort){
+		if(arrayToSort == null || arrayToSort.length == 0){
+			return;
+		}
 		int n = arrayToSort.length;
 		
 		for(int i = n / 2 - 1; i >= 0; i--){

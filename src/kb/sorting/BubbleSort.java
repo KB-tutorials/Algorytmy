@@ -3,6 +3,9 @@ package kb.sorting;
 public class BubbleSort {
 	
 	public static void sort(int[]arrayToSort){
+		if(arrayToSort == null || arrayToSort.length == 0){
+			return;
+		}
 		int n = arrayToSort.length;
 		int it = 0;
 		boolean swapped = true;

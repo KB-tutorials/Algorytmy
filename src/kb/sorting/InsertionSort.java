@@ -2,6 +2,9 @@ package kb.sorting;
 
 public class InsertionSort {
 	public static void sort(int[]arr){
+		if(arr == null || arr.length == 0){
+			return;
+		}
 		int n = arr.length;
 		int current;
 		int otherIndex;
