@@ -18,4 +18,21 @@ public class InsertionSort {
 			arr[otherIndex] = current;
 		}
 	}
+
+	public static void sortPartOfArray(int[]array, int left, int right){
+		if(array == null || array.length == 0){
+			return;
+		}
+		int current;
+		int otherIndex;
+		for(int i = left + 1; i <= right; i++){
+			current = array[i];
+			otherIndex = i;
+			while(otherIndex > left && current < array[otherIndex - 1]){
+				array[otherIndex] = array[otherIndex - 1];
+				otherIndex--;
+			}
+			array[otherIndex] = current;
+		}
+	}
 }
