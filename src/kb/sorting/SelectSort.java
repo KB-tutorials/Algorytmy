@@ -3,6 +3,9 @@ package kb.sorting;
 public class SelectSort {
 	
 	public static void sort(int[]arrayToSort){
+		if(arrayToSort == null || arrayToSort.length == 0){
+			return;
+		}
 		int n = arrayToSort.length;
 		int minIndex;
 		for(int i = 0; i < n - 1; i++){
